@@ -19,8 +19,7 @@ from course_functions.core_functions_reduced_msc_course import saveWorkspace
 import course_functions.process_mov_core_reduced_msc_course as pmc
 
 #%% Setting the directories
-dataFolder = r'C:\MAIN\FOLDER\2pData'
-dataFolder = r'D:\2pData'
+dataFolder = r'/home/mo/Uni/Fly_Murder_Party/2p_DATA'
 save_data = True # choose True or False
 save_raw_ROIs = True
 # Plot related
@@ -30,15 +29,16 @@ plt.close('all')
 
 # Experimental parameters
 experiment = 'Tm9_recordings' # same name as the defined experimental folder
-current_exp_ID = '2022_05_17_user_fly1'
-current_t_series ='TSeries-05172022_fly1-002'
-Genotype = 'Tm9-lexA_lexAop-GCamp6f'
-save_folder_geno = 'Expline'
-Age = '2-3'
-Sex = 'f'
+current_exp_ID = '220926_fly1'
+current_t_series = current_exp_ID + '-001'
+Genotype = 'SomethingSomethingGCaMP6f' #[M] Naming stuff
+save_folder_geno = 'ukn.' #[M] Naming stuff
+Age = 'ukn.' #[M] Naming stuff
+Sex = 'ukn.' #[M] Naming stuff
 
-time_series_stack = 'TSeries-05172022_fly1-002_Ch2_reg.tif'# motion aligned tif stack from Step 1
 
+#[M] Not yet known what this does, I missed it # I think it's the name of the "video"
+time_series_stack = current_t_series + '_Ch2_reg.tif'# motion aligned tif stack from Step 1
 # Analysis parameters
 analysis_type = 'lumgratings' #stimulus type that was used
 
@@ -46,7 +46,7 @@ analysis_type = 'lumgratings' #stimulus type that was used
 initialDirectory = os.path.join(dataFolder, experiment)
 
 alignedDataDir = os.path.join(initialDirectory,
-                              'rawData\\alignedData')
+                              'rawData/alignedData')
 stimInputDir = os.path.join(initialDirectory, 'stimulus_types')
 saveOutputDir = os.path.join(initialDirectory, 'analyzed_data')
 summary_save_dir = os.path.join(alignedDataDir,
